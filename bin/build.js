@@ -3,7 +3,7 @@ const Zip = require('adm-zip')
 
 const currentVersion = JSON.parse(fs.readFileSync('./src/package.json')).version
 
-const version = process.argv[2]
+const version = process.argv[2] || currentVersion;
 
 if (!version) {
   // eslint-disable-next-line no-console
