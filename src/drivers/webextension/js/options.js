@@ -20,7 +20,7 @@ const Options = {
       ['upgradeMessage', true],
       ['dynamicIcon', false],
       ['badge', true],
-      ['tracking', true],
+      ['tracking', false],
       ['themeMode', false],
     ].map(async ([option, defaultValue]) => {
       const el = document

@@ -3,7 +3,6 @@
 /* globals chrome, Utils */
 
 const {
-  agent,
   open,
   i18n,
   getOption,
@@ -57,8 +56,7 @@ const Popup = {
     }
 
     // Terms
-    const termsAccepted =
-      agent === 'chrome' || (await getOption('termsAccepted', false))
+    const termsAccepted = true
 
     if (termsAccepted) {
       document.querySelector('.terms').classList.add('terms--hidden')

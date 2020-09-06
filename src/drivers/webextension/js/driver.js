@@ -9,7 +9,7 @@ const {
   analyzeManyToMany,
   resolve,
 } = Wappalyzer
-const { agent, promisify, getOption, setOption, open } = Utils
+const { agent, promisify, getOption, setOption } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
 
@@ -75,14 +75,14 @@ const Driver = {
     chrome.runtime.onMessage.addListener(Driver.onMessage)
 
     const { version } = chrome.runtime.getManifest()
-    const previous = await getOption('version')
-    const upgradeMessage = await getOption('upgradeMessage', true)
+    // const previous = await getOption('version')
+    // const upgradeMessage = await getOption('upgradeMessage', true)
 
-    if (previous === null) {
-      open('https://www.wappalyzer.com/installed/')
-    } else if (version !== previous && upgradeMessage) {
-      open(`https://www.wappalyzer.com/upgraded/?v${version}`, false)
-    }
+    // if (previous === null) {
+    //   open('https://www.wappalyzer.com/installed/')
+    // } else if (version !== previous && upgradeMessage) {
+    //   open(`https://www.wappalyzer.com/upgraded/?v${version}`, false)
+    // }
 
     await setOption('version', version)
   },
@@ -591,7 +591,8 @@ const Driver = {
    * This function can be disabled in the extension settings
    */
   async ping() {
-    const tracking = await getOption('tracking', true)
+    // const tracking = await getOption('tracking', true)
+    const tracking = false
     const termsAccepted =
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
@@ -637,7 +638,7 @@ const Driver = {
       const count = Object.keys(hostnames).length
 
       if (count && (count >= 50 || Driver.lastPing < Date.now() - expiry)) {
-        await Driver.post('https://api.wappalyzer.com/ping/v2/', hostnames)
+        // await Driver.post('https://api.wappalyzer.com/ping/v2/', hostnames)
 
         await setOption('hostnames', (Driver.cache.hostnames = {}))
 
@@ -645,7 +646,7 @@ const Driver = {
       }
 
       if (Driver.cache.ads.length > 50) {
-        await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
+        // await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
 
         await setOption('ads', (Driver.cache.ads = []))
       }
