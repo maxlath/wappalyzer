@@ -1,7 +1,7 @@
 {
-  "name": "Wappalyzer",
-  "short_name": "Wappalyzer",
-  "author": "Wappalyzer",
+  "name": "Wappalyzer_custom",
+  "short_name": "Wappalyzer_custom",
+  "author": "Wappalyzer_custom",
   "homepage_url": "https://www.wappalyzer.com/",
   "description": "Identify web technologies",
   "version": "6.3.1",
@@ -68,5 +68,10 @@
     "http://*/*",
     "https://*/*"
   ],
-  "content_security_policy": "script-src 'self'; object-src 'self'"
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon-nukoytdwdjvgdjripjcm@example.com"
+    }
+  }
 }
