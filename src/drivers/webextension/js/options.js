@@ -17,8 +17,8 @@ const Options = {
     }
 
     ;[
-      ['upgradeMessage', true],
-      ['dynamicIcon', false],
+      ['upgradeMessage', false],
+      ['dynamicIcon', true],
       ['badge', true],
       ['tracking', false],
       ['themeMode', false],

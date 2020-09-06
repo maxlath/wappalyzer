@@ -415,7 +415,7 @@ const Driver = {
    * @param {Object} technologies
    */
   async setIcon(url, technologies = []) {
-    const dynamicIcon = await getOption('dynamicIcon', false)
+    const dynamicIcon = await getOption('dynamicIcon', true)
     const badge = await getOption('badge', true)
 
     let icon = 'default.svg'
