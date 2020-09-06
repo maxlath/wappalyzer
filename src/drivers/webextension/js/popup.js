@@ -239,15 +239,14 @@ const Popup = {
 
           const link = technologyNode.querySelector('.technology__link')
 
-          const wappalyzerLink = technologyNode.querySelector(
-            '.wappalyzer__link'
-          )
-
           link.href = website
           link.textContent = name
 
+          const wappalyzerLink = technologyNode.querySelector(
+            '.wappalyzer__link'
+          )
           wappalyzerLink.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}/`
-          wappalyzerLink.content = 'wappalyzer'
+          wappalyzerLink.textContent = 'w'
 
           const confidenceNode = technologyNode.querySelector(
             '.technology__confidence'

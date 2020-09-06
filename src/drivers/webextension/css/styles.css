@@ -198,7 +198,21 @@ a:hover {
 }
 
 .wappalyzer__link {
-  color: #666;
+  margin-left: 0.5em;
+  color: white;
+  background-color: var(--color-text);
+  border-radius: 2em;
+  width: 1.2em;
+  height: 1.2em;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.wappalyzer__link:not(:hover){
+  opacity: 0.5;
 }
 
 .technology__confidence {
