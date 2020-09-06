@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "@prantlf/jsonlint": "^10.2.0",
-    "adm-zip": "^0.4.16",
-    "convert-svg-to-png": "^0.5.0"
+    "adm-zip": "^0.4.16"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
@@ -18,7 +17,7 @@
     "link": "node ./bin/link.js",
     "lint": "eslint --fix src/**/*.js",
     "validate": "yarn run lint && jsonlint -qV ./schema.json ./src/technologies.json && node ./bin/validate.js",
-    "convert": "cd ./src/drivers/webextension/images/icons ; cp *.svg converted ; cd converted ; convert-svg-to-png *.svg --width 32 --height 32 ; rm *.svg",
+    "convert": "./scripts/convert",
     "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/technologies.json",
     "build": "yarn run link && yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js",
     "build:safari": "xcrun safari-web-extension-converter --swift --project-location build --force src/drivers/webextension"

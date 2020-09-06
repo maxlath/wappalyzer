@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+cd ./src/drivers/webextension/images/icons
+cp *.svg converted
+cd converted
+
+for file in *.svg; do
+  outfile=`basename $file .svg`.png
+  echo convert -verbose "'$file'" -resize 32x32 "'$outfile'"
+done | gm batch -
+
+rm *.svg
