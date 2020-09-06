@@ -197,6 +197,10 @@ a:hover {
   color: var(--color-text);
 }
 
+.wappalyzer__link {
+  color: #666;
+}
+
 .technology__confidence {
   opacity: .5;
   font-size: .7rem;
