@@ -1,7 +1,7 @@
 # Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
 
 [Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.
-It detects content management systems, ecommerce platforms, JavaScript frameworks, 
+It detects content management systems, ecommerce platforms, JavaScript frameworks,
 analytics tools and [much more](https://www.wappalyzer.com/technologies).
 
 * [wappalyzer on NPM](https://www.npmjs.com/package/wappalyzer)
@@ -46,3 +46,15 @@ node src/drivers/npm/cli.js https://example.com
 * Go go `about:debugging#/runtime/this-firefox`
 * Click 'Load Temporary Add-on'
 * Select `src/drivers/webextension/manifest.json`
+
+## Local build
+
+To install a locally built version of the extension:
+1/ build the extension
+```sh
+npm run build
+```
+2/ Make sure your browser accepts non-signed extensions.
+  * Firefox: open `about:config` and set `xpinstall.signatures.required` to `false`
+3/ Install the extension
+  * Firefox: open `about:addons`, click on the cog and select `Install an extension from a file...`, select `./build/webextension.zip`
