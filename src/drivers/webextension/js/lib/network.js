@@ -744,4 +744,10 @@
     }
     return true;
   });
+
+	chrome.commands.onCommand.addListener(command => {
+		if (command === 'open-technology-popup') {
+			chrome.browserAction.openPopup();
+		}
+	});
 })();

@@ -73,5 +73,13 @@
     "gecko": {
       "id": "addon-nukoytdwdjvgdjripjcm@example.com"
     }
+  },
+  "commands": {
+    "open-technology-popup": {
+      "suggested_key": {
+        "default": "Alt+T"
+      },
+      "description": "Open Technology Popup"
+    }
   }
 }
